@@ -1,0 +1,10 @@
+{
+    "query": "I need a model to detect the anomaly.",
+    "task_type": "classification",
+    "model": "patchcore",
+    "metirc": "auroc",
+    "datasets": {
+        "name": "data",
+        "root_path": "path/to/dataset"
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "patchcore": { 
+        "description": "PatchCore is a simple yet effective method for unsupervised anomaly detection. It uses a two-step process: (1) learn a representation of normal patches and (2) detect anomalies based on the learned representation. PatchCore is particularly effective for detecting small localized anomalies.",
+        "parameters": {
+            "num_neighbors": "Number of nearest neighbors to consider when detecting anomalies",
+            "coreset_sampling_ratio": "Ratio of patches to keep when subsampling the training set",
+            "batch_size": "Batch size for training and testing"
+        },
+        "returns": "A PatchCore model"
+    },
+    "cflow": { 
+        "description": "CFLOW model is based on a conditional normalizing flow framework adopted for anomaly detection with localization. It consists of a discriminatively pretrained encoder followed by a multi-scale generative decoders. The encoder extracts features with multi-scale pyramid pooling to capture both global and local semantic information with the growing from top to bottom receptive fields. Pooled features are processed by a set of decoders to explicitly estimate likelihood of the encoded features. The estimated multi-scale likelyhoods are upsampled to input size and added up to produce the anomaly map.",
+        "parameters": {
+            "lr": "Learning rate for training",
+            "batch_size": "Batch size for training",
+            "num_epochs": "Number of epochs to train",
+            "fiber_batch_size": "Batch size for processing feature fibers",
+            "condition_vector": "Size of the condition vector for the normalizing flows"
+        },
+        "returns": "A CFlow model"
+    },
+    "ganomaly": { 
+        "description": "GANomaly is a method for unsupervised anomaly detection that uses a generative adversarial network (GAN) to learn the distribution of normal data. It is particularly effective for detecting small localized anomalies.",
+        "parameters": {
+            "batch_size":"Batch size for training and testing",
+            "latent_vec_size": "Size of the latent vector for the GAN",
+            "n_features": "Number of features in the convolutional layers",
+            "lr": "Learning rate for training",
+            "beta1": "Beta1 for Adam optimizer",
+            "beta2": "Beta2 for Adam optimizer",
+            "num_epochs": "Number of epochs to train"
+        },
+        "returns": "A GANomaly model"
+    }
+}
